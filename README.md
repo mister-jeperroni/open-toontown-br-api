@@ -1,46 +1,48 @@
 # Open Toontown BR Webserver
 
-Este é o servidor web para o projeto Open Toontown BR. Ele fornece várias rotas para gerenciar contas e autenticação.
+This is the API for the [Open Toontown BR](https://github.com/mister-jeperroni/open-toontown-br) project. It provides various routes for account management and authentication.
 
-## Configuração
+## Setup
 
-### Pré-requisitos
+### Prerequisites
 
 - Node.js
 - npm
-- pm2 (opcional, para gerenciamento de processos em produção)
 
-### Instalação
+### Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
     ```sh
-    git clone https://github.com/seu-usuario/open-toontown-br-webserver.git
-    cd open-toontown-br-webserver
+    git clone https://github.com/mister-jeperroni/open-toontown-br-api
+    cd open-toontown-br-api
     ```
 
-2. Instale as dependências:
+2. Install the dependencies:
 
     ```sh
     npm install
     ```
 
-3. Crie um arquivo `.env` na raiz do projeto e defina as variáveis de ambiente necessárias:
+3. Create a `.env` file in the root of the project and define the necessary environment variables:
 
     ```env
     PORT=80
-    USER_DB_PATH=/caminho/para/o/banco/de/dados
-    NODE_ENV=production_or_development
-    ##production_uses_mongo
-    MONGODB_URI=
-    ##development_uses_yaml
-    YAML_DIR=
+    NODE_ENV=production
+    MONGODB_URI=your_mongodb_uri
     JWT_SECRET=your_jwt_secret
     ```
 
-### Executando o servidor
+### Running the Server
 
-Para iniciar o servidor em modo, execute:
+To start the server in production mode, run:
 
 ```sh
 npm start
+```
+
+For development mode with automatic restarts, use:
+
+```sh
+npx nodemon src/server.js
+```
